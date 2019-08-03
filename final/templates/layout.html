@@ -5,6 +5,13 @@
         <title>벤처창업웹프로그래밍2 - 2017</title>
     </head>
     <body>
+      {% if user.is_authenticated %}
+        <a href="{% url "profile" %}">프로필</a>
+        <a href="{% url "logout" %}">로그아웃</a>
+      {% else %}
+        <a href="{% url "login" %}">로그인</a>
+        <a href="{% url "signup" %}">회원가입</a>
+      {% endif %}
       {% block content %}
       {% endblock %}
     </body>
