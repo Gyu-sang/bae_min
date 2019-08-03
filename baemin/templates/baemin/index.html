@@ -17,7 +17,7 @@
         <td>{{shop.name}}</td>
         <td>{{shop.tel}}</td>
         <td>{{shop.addr}}</td>
-        <td><a href="#" class="btn btn-primary">주문하기</a></td>
+        <td><a href="{% url "baemin:order_new" shop.id %}" class="btn btn-primary">주문하기</a></td>
       </tr>
       {% endfor %}
     </tbody>
