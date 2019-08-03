@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^baemin/', include('baemin.urls', namespace='baemin')),
+    url(r'^$', lambda r:redirect('baemin:index'), name='root'),
 ]
